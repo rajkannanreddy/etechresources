@@ -27,7 +27,6 @@ h4 {
 #data-table {
 	border: none; /* Turn off all borders */
 	border-top: 1px solid #ccc;
-	/* width: 400px; */
 }
 #data-table caption {
 	color: #545454;
