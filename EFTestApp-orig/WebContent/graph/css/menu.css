@@ -1,0 +1,34 @@
+#cat-menu {
+	BORDER-BOTTOM: #326693 3px solid;  HEIGHT: 25px; BORDER-TOP: #e0e0e0 0px solid
+}
+.nav {
+	Z-INDEX: 99; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 25px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px
+}
+.nav A {
+	Z-INDEX: 100; POSITION: relative; DISPLAY: block; COLOR: #444; TEXT-DECORATION: none
+}
+.nav LI {
+	WIDTH: auto; FLOAT: left; 
+}
+.nav LI A {
+	MARGIN-RIGHT: 1px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 25px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #3b73b9 no-repeat right 0px; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px;BORDER-BOTTOM: #326693 3px solid; COLOR:#fff;
+}
+
+.nav LI A:hover {
+	LINE-HEIGHT: 25px; BACKGROUND: #fff no-repeat right 0px; BORDER-BOTTOM: #49a3ff 3px solid; COLOR: #326693 
+}
+.nav LI UL {
+	Z-INDEX: 999; BORDER-BOTTOM: #ecede8 0px solid; POSITION: absolute; BORDER-LEFT: #ecede8 1px solid; MARGIN: 0px 0px 0px -1px; WIDTH: 110px; BACKGROUND: #fbfbfb; BORDER-TOP: #ecede8 1px solid; BORDER-RIGHT: #ecede8 1px solid; LEFT: -999em; padding: 0px;
+}
+.nav LI UL LI {
+	BORDER-BOTTOM: #ecede8 1px solid; BORDER-TOP: #fff 0px solid; BORDER-RIGHT: medium none; LIST-STYLE-TYPE: none;
+}
+.nav LI UL LI A {
+	BORDER-BOTTOM: medium none; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 5px; WIDTH: 110px; PADDING-RIGHT: 5px; BACKGROUND: #3b73b9; COLOR: #fff; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-TOP: 0px; 
+}
+.nav LI UL LI A:hover {
+	BORDER-BOTTOM: medium none; LINE-HEIGHT: 20px; BACKGROUND: #49a3ff; COLOR: #fff;
+}
+.nav LI:hover UL {
+	LEFT: auto
+}

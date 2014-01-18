@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<LINK rel=stylesheet type=text/css href="css/menu.css">
+<LINK rel=stylesheet type=text/css href="css/graph.css">
+<SCRIPT type=text/javascript src="js/jquery.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="js/jschart.js"></SCRIPT>
+</head>
+<body>
+<div class="jheader">
+	<table style="width: 100%; align: center;">
+		<tr>
+			<td rowspan="2" width="60" valign="bottom"><IMG height=60 alt="Logo" src="images/logo.jpg" width=300></td>
+			<td>
+			<td align="right" vAlign="middle">
+				<P style="FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #3b73b9" align=right>&nbsp;&nbsp;&nbsp;&nbsp; Enterprise Technical Resource &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+			</td>
+		</tr>
+		
+	</table>
+
+	<table style="width: 100%; align: center;">
+		<tr>
+			<td align="left" class="skin OBJ_0010">
+				<P>Welcome Guest !</p>
+			</td>
+		</tr>
+	</table>
+
+	<DIV id=cat-menu>
+		<UL class=nav>
+			<LI><A href="http://qa.bd.capital.ge.com/bdma/home.do?method=execute">Home</A></LI>
+			<LI><A
+				href="http://qa.bd.capital.ge.com/bdma/AcquisitionDeal.do?method=AcquisitionHomePage&amp;DealCreationProgress=0">Acquisition</A>
+				<UL>
+					<LI><A href="http://qa.bd.capital.ge.com/bdma/AcquisitionDeal.do?method=createAcquisitionDeal">Create a Deal</A></LI>
+					<LI><A href="http://qa.bd.capital.ge.com/bdma/AcquisitionDeal.do?method=FindAcquisitionDeal">Find a Deal</A></LI>
+				</UL>
+			<LI><A
+				href="http://qa.bd.capital.ge.com/bdma/DispositionDeal.do?method=DispositionHomePage&amp;DealCreationProgress=0">Disposition</A>
+				<UL class=children>
+					<LI><A href="http://qa.bd.capital.ge.com/bdma/DispositionDeal.do?method=createDispositionDeal">Create a Deal</A></LI>
+					<LI><A href="http://qa.bd.capital.ge.com/bdma/DispositionDeal.do?method=FindDispositionDeal">Find a Deal</A></LI>
+				</UL></LI>
+			<LI><A href="http://qa.bd.capital.ge.com/bdma/Reports.do?method=reportHomePage">Reporting</A>
+				<UL class=children>
+					<LI><A href="http://qa.bd.capital.ge.com/bdma/Reports.do?method=createReportPage">Create a Report</A></LI>
+				</UL></LI>
+			<LI><A href="http://qa.bd.capital.ge.com/bdma/Admin.do?method=AdminHome">Administration</A></LI>
+			<LI style="float: right"><A href="http://qa.bd.capital.ge.com/bdma/Admin.do?method=AdminHome">Log Out</A></LI>
+			<LI style="float: right"><A href="http://qa.bd.capital.ge.com/bdma/Admin.do?method=AdminHome">Help</A></LI>
+			
+		</UL>
+	</DIV>
+
+
+
+	<div style="clear: both; height: 5px;">&nbsp;</div>
+	<table style="width: 100%; align: center;">
+		<tr>
+			<td colspan="2"><div id="msg"></div></td>
+		</tr>
+		
+		<tr>
+			<td align="left" class="skin OBJ_0010">
+				<TABLE border=0 cellSpacing=0 cellPadding=0>
+					<!-- Acquisition Deals code Starts-->
+					<TBODY>
+						<TR>
+							<!-- Acquisition Deals Header code Starts-->
+
+							<TD></TD>
+							<TD  vAlign=top rowSpan=2>
+								<DIV class="portlet width-520">
+									<DIV class="header">
+										<TABLE style="WIDTH: 90%" border=0 cellSpacing=0 cellPadding=0>
+											<TBODY>
+												<TR class=wl_header_div>
+													<TD>
+														<H1>Acquisitions &amp; Disposition Deals</H1>
+													</TD>
+												</TR>
+											</TBODY>
+										</TABLE>
+									</DIV>
+									<!-- Acquisition Deals Header code Ends-->
+									<DIV class=wl_area_box>
+										<!-- Acquisition Deals sub Header code Starts-->
+										<TABLE style="WIDTH: 100%; align: center">
+											<TBODY>
+												<TR style="align: middle;">
+													<TD>&nbsp;</TD>
+												</TR>
+												<TR vAlign=bottom align=left>
+													<TD>Closed Deals in past 3 Years for all Poles</TD>
+												</TR>
+												<TR style="align: middle;">
+													<TD>&nbsp;</TD>
+												</TR>
+												<TR style="align: middle;">
+													<TD>
+														<DIV id=wrapper>
+															<DIV class=chart-0>
+																<TABLE id=data-table-0 border=1 cellSpacing=0 cellPadding=10>
+																<thead>
+																	<TR>
+																			<TH>&nbsp;</TH>
+																			<TH scope=col>Acquisition Deals 2010</TH>
+																			<TH scope=col>Acquisition Deals 2011</TH>
+																			<TH scope=col>Acquisition Deals</TH>
+																			<TH scope=col>Acquisition Deals 2013</TH>
+																			<TH scope=col>Acquisition 14</TH>
+																		</TR>
+																		<!--  	<TR>
+																			<TH>&nbsp;</TH>
+																			<TH scope=col>2010</TH>
+																			<TH scope=col>2011</TH>
+																			<TH scope=col>2012</TH>
+																			<TH scope=col>2013</TH>
+																			<TH scope=col>Acquisition 14</TH>
+																		</TR>
+																		-->
+																		</thead>
+																		<tbody><TR>
+																			<TD scope=row>First Row Acquisition Deals</TD>
+																			<TD>110</TD>
+																			<TD>220</TD>
+																			<TD>330</TD>
+																			<TD>440</TD>
+																			<TD>550</TD>
+																		</TR>
+																		<TR>
+																			<TD scope=row>Second Row</TD>
+																			<TD>200</TD>
+																			<TD>400</TD>
+																			<TD>600</TD>
+																			<TD>800</TD>
+																			<TD>400</TD>
+																		</TR>
+																		<TR>
+																			<TD scope=row>Third Row</TD>
+																			<TD>300</TD>
+																			<TD>600</TD>
+																			<TD>900</TD>
+																			<TD>1200</TD>
+																			<TD>400</TD>
+																		</TR>
+																		<TR>
+																			<TD scope=row>Fourth Row Row</TD>
+																			<TD>100</TD>
+																			<TD>200</TD>
+																			<TD>300</TD>
+																			<TD>400</TD>
+																			<TD>400</TD>
+																		</TR>
+																		<TR>
+																			<TD scope=row>Fifth Row</TD>
+																			<TD>200</TD>
+																			<TD>400</TD>
+																			<TD>600</TD>
+																			<TD>800</TD>
+																			<TD>400</TD>
+																		</TR>
+																		</tbody>
+																</TABLE>
+															</DIV>
+														</DIV>
+													</TD>
+												</TR>
+											</TBODY>
+										</TABLE>
+									</DIV>
+								</DIV>
+							</TD>
+						</TR>
+
+					</TBODY>
+				</TABLE>
+			</td>
+		</tr>
+
+	</table>
+</div>
+</body>
+</html>

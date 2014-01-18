@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<SCRIPT type=text/javascript src="js/svg.js"></SCRIPT>
+<SCRIPT type=text/javascript src="js/jquery.min.js"></SCRIPT>
+<SCRIPT type=text/javascript>
+$(document).ready(function() {
+var data = [10,20,30,20,10];
+var width = 520;
+var height = 520;
+var labels = ['ten','twenty','thirty','twenty','ten'];
+var colors = ['blue','green','red','green','blue'];
+
+var circleRadius = Math.min(width-102, height-102) / 2;
+var x = (width-100) / 2;
+var y = (height-100) / 2;
+
+document.body.appendChild(pieChart(data, width, height, x, y, circleRadius, colors, labels, 430, 100));
+});
+</SCRIPT>
+</head>
+
+<body>
+</body>
+</html>

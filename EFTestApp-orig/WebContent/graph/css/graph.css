@@ -1,0 +1,254 @@
+body1 {
+	background: #fff;
+	color: #222;
+	font: 12px/20px 'Helvetica Neue', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+h2 {
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: center;
+}
+h4 {
+	color: #545454;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: center;
+}
+
+/* Table */
+#data-table {
+	border: none; /* Turn off all borders */
+	border-top: 1px solid #ccc;
+	/* width: 400px; */
+}
+#data-table caption {
+	color: #545454;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+	padding: 0;
+	text-align: center;
+}
+#data-table thead {
+	background: #f0f0f0;
+}
+#data-table th, 
+#data-table td {
+	border: none; /* Turn off all borders */
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 10px;
+	text-align: left;	
+}
+#reset-graph-button {
+	float:right;
+}
+
+/* Graph */
+/* Containers */
+#wrapper {
+	margin-left: 75px;
+	position: relative;
+	top: 10%;
+}
+.graph {
+	height: 275px;
+	position: relative;
+}
+.graph ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.gb {
+	height: 100%;
+	width: 90%;
+	position: relative;
+}
+
+/* Legend */
+.legend {
+	background: #f0f0f0;
+	border-radius: 4px;
+	margin-top: 10px;
+}
+.legend li {
+	padding: 5px 10px;
+	float: left;
+}
+.legend span.icon {
+	border-radius: 2px;
+	float: left;
+	height: 16px;
+	margin: 0px 4px 0 0;
+	width: 16px;	
+}
+#yLegendContainer span {
+POSITION: absolute; 
+FILTER: progid:DXImageTransform.Microsoft.Matrix(M11=-1.836909530733566e-16, M12=1, M21=-1, M22=-1.836909530733566e-16, sizingMethod="auto expand" ); 
+color: #555;
+height: 20px;
+left: -72px;
+text-align: center;
+}
+
+/* X-Axis */
+.x-axis {
+	color: #555;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.x-axis li {
+	float: left;
+	position: relative;
+	width: 20%;
+}
+
+/* Y-Axis */
+.y-axis {
+	left: 0;
+	color: #555;
+	position: absolute;
+	text-align: left;
+	width: 90%;
+	height: 20%
+}
+.y-axis li {
+	border-top: 1px solid #ccc;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.y-axis li span {
+	display: block;
+	padding: 0 2px 0 0;
+	margin: -9px 0px 0px -52px;
+	width: 50px;
+	text-align: right;
+}
+
+/* Graph Bars */
+.bars {
+	height: 81.75%;
+	position: relative;
+	width: 100%;
+}
+.bar-group {
+	float: left;
+	height: 100%;
+	position: relative;
+	width: 20%;
+}
+.bar {
+	border-radius: 3px 3px 0 0;
+	bottom: 0;
+	cursor: pointer;	
+	height: 0;
+	position: absolute;
+	text-align: center;
+	width: 16px;
+}
+.bar span {
+	border-radius: 3px;
+	left: 12px;
+	display: none;
+	margin: 0;
+	position: fixed;
+	text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+	z-index: 99;
+	white-space:nowrap;
+	background: #f0f0f0;
+	border: #3b73b9 1px solid;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 1px 4px;
+	box-shadow: rgba(0, 0, 0, 0.6) 0 1px 4px;
+}
+.bar:hover span {
+	display: inline-block;
+	margin-top: -25px;
+}
+
+.fig0 {
+	background: #a3bb43  0 0 repeat-y;
+}
+.fig1 {
+	background: #65c2e8 0 0 repeat-y;
+}
+.fig2 {
+	background: #eea151 0 0 repeat-y;
+}
+.fig3 {
+	background: #3b73b9 0 0 repeat-y;
+}
+.fig4 {
+	background: #D5A0EE 0 0 repeat-y;
+}
+
+.jheader {
+	MARGIN: 0px 50px; HEIGHT: 105px
+}
+
+.fl {
+	FLOAT: left
+}
+.fr {
+	FLOAT: right
+}
+.portlet {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-RIGHT: 0px; PADDING-TOP: 0px
+}
+.portlet .header {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #3b73b9; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.portlet H1 {
+	PADDING-BOTTOM: 5px; TEXT-TRANSFORM: uppercase; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT: bold 11px GE Inspira; FLOAT: left; COLOR: #fff; PADDING-TOP: 5px
+}
+.portlet .wl_header_div {
+	BORDER-BOTTOM: #3b73b9 1px solid; BORDER-LEFT: #3b73b9 1px solid; BACKGROUND-COLOR: #3b73b9; TEXT-INDENT: 10px; WIDTH: 100%; HEIGHT: 20px; COLOR: #ffffff; VERTICAL-ALIGN: middle; BORDER-TOP: #3b73b9 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #3b73b9 1px solid
+}
+.portlet .wl_area_box {
+	BORDER-BOTTOM: #cccccc 1px solid; POSITION: relative; BORDER-LEFT: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff; WIDTH: 99.7%; CLEAR: both; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+.portlet .wl_area_box .cor-lft {
+	POSITION: absolute; WIDTH: 7px; BOTTOM: -1px; LEFT: -1px
+}
+.portlet .wl_area_box .cor-rgt {
+	POSITION: absolute; BOTTOM: -1px; HEIGHT: 7px; RIGHT: -1px
+}
+.skin {
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.width-420 {
+	WIDTH: 420px
+}
+.width-520 {
+	WIDTH: 520px
+}
+.width-620 {
+	WIDTH: 620px
+}
+.width-720 {
+	WIDTH: 720px
+}
+.width-820 {
+	WIDTH: 820px
+}
+.width-920 {
+	WIDTH: 920px
+}
+
+
+
