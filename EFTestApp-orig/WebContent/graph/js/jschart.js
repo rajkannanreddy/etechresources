@@ -1,10 +1,12 @@
 /*  http://coding.smashingmagazine.com/2011/09/23/create-an-animated-bar-graph-with-html-css-and-jquery/ */
-$(document).ready(function() {
-	var testVar=null;
+$(window).load(function() {
 	var yAxisMarkings = 5, measure = 'B', currency = '$', measureName='Billions', xLength = 0; cLength = 0;
 	var chartData = []; columnGroups = []; chartHeading = []; chartLegend = []; xLegend	= []; yLegend= [], chartYMax = 0, chartWidth=0;
-
-
+	var $tip = "",
+	onPieMouseenter = function(e){  },
+    onPieMouseleave = function(e){  };
+	
+	    
 	$("[id^=data-table-").each(function(index) {
 		var data = $('#data-table-'+index), container = $('.chart-'+index);
 		chartData = []; columnGroups = []; chartHeading = []; chartLegend = []; xLegend	= []; yLegend= []; chartYMax = 0;
@@ -15,7 +17,7 @@ $(document).ready(function() {
 	});
 
 	function createGraph(data, container, indexWidth) {
-		var bars = [], barTimer = 0, graphTimer = 0;		
+		var bars = [];		
 
 		var graphContainer = $('<div class="graph"></div>');
 		var yLegendContainer = $('<div id="yLegendContainer"></div>');
@@ -25,20 +27,22 @@ $(document).ready(function() {
 		var yAxisList	= $('<ul class="y-axis"></ul>');
 		var clearDiv = $('<div style="clear: both;"></div>');
 		var legendList	= $('<ul class="legend"></ul>');
+		
+		$tip = $('<div class="pieTip"/>').appendTo('body').hide();
 
 		var heading = $('<h4>' + chartHeading + '</h4>');
 		heading.appendTo(graphContainer);
 
 		xAxisList = appendListData(xLegend, xAxisList);
 		yAxisList = appendListData(yLegend, yAxisList);
-		$('<span>Test Message</span>').appendTo(yLegendContainer);
+		$('<span>'+measureName+'</span>').appendTo(yLegendContainer);
 		legendList = appendListDataWithClass('class="icon fig', chartLegend, legendList);
 
 		$(data).css('display', 'none');
 		$(container).css('height', '90%');
 
 		chartWidth = ($(container).width()*(90/100));
-		
+		var count = 0;
 
 		$.each(columnGroups, function(i) {
 			var barGroup = $('<div class="bar-group"></div>');
@@ -55,12 +59,13 @@ $(document).ready(function() {
 				barObj.width = Math.floor(Math.abs(barWidth));
 				barObj.figWidth = Math.floor(Math.abs((j==0) ? 14 : (((barWidth+1) * j)+14)));	
 				//alert(barWidth+" : "+barObj.figWidth+" : "+(((barWidth+1) * j)+14));
-				barObj.spanText = xLegend[i]+" <br />"+chartLegend[j] +" : "+label;
-
-				barObj.bar = $('<div class="bar fig' + j + '"><span>' + barObj.spanText + '</span></div>').appendTo(barGroup);
+				barObj.spanText = xLegend[i] + "<br>" + chartLegend[j] +" : "+label;
+				barObj.bar = $('<div data-order='+count+' class="bar fig' + j + '"></div>').appendTo(barGroup);
 				bars.push(barObj);
+				count++;
 			}
 			barGroup.appendTo(barContainer);
+			
 		});
 
 		yLegendContainer.appendTo(graphContainer);
@@ -77,13 +82,17 @@ $(document).ready(function() {
 
 		function displayGraph(bars, i) {			
 			if (i < bars.length) {
+				$(bars[i].bar)
+		          .on("mouseenter", pathMouseEnter)
+		          .on("mouseleave", pathMouseLeave)
+		          .on("mousemove", pathMouseMove);
 				var top = 0; left = 0;
 				$(bars[i].bar).animate({
 					height: bars[i].height,
 					width: bars[i].width,
 					left: bars[i].figWidth
 				}, 0);
-				setSpanEvent($(bars[i].bar));
+				//setSpanEvent($(bars[i].bar));
 				setSpanWidth($(bars[i].bar));
 				barTimer = setTimeout(function() {
 					i++;				
@@ -92,6 +101,25 @@ $(document).ready(function() {
 			}
 		}
 		displayGraph(bars, 0);
+		function pathMouseEnter(e){
+			
+		    var index = $(this).data().order;
+		    //alert(index+" : ")
+		    $tip.html(bars[index].spanText);
+		    $tip.show();
+		   // onPieMouseenter.apply($(this));
+		  }
+		  function pathMouseLeave(e){
+		    var index = $(this).data().order;
+		    $tip.hide();
+		   // onPieMouseleave.apply($(this));
+		  }
+		  function pathMouseMove(e){
+		    $tip.css({
+		      top: e.pageY + (-50),
+		      left: e.pageX - $tip.width() / 2 - 2
+		    });
+		  }
 
 		
 	}	
@@ -112,7 +140,7 @@ $(document).ready(function() {
 		$(data).hover(function( event ) {
 			//alert(event.clientY +" : "+ $(this).offset().top);
 			$(this).find("span").css('top', (event.clientY));
-			$(this).find("span").css('left', (event.clientX));
+			$(this).find("span").css('left', (event.clientX+8));
 		});		
 	}
 
@@ -123,9 +151,11 @@ $(document).ready(function() {
 
 	function getEqualXAxisWidth(group, indexWidth) {
 		var totalLength = 0; tValue = []; modWidthValue = []; modTemp = 0; modTemp_test=0;
-
+var testmsg ="";
 		$.each(group, function( index ) {  
-			var thisLength = ($(this).width()); totalLength += thisLength; tValue[index] = thisLength;
+			
+			var thisLength = Math.ceil(($(this)[0].getBoundingClientRect().width)-20); totalLength += thisLength; tValue[index] = thisLength;
+			testmsg+= "CT : "+thisLength+" AL of"+index+" :"+tValue[index]+" TL: "+totalLength+" \n ";
 			(totalLength + (index*20)) < chartWidth ? (modWidthValue[modTemp++] = 0) : "";
 		});
 		var modround = 1;
@@ -156,8 +186,10 @@ $(document).ready(function() {
 		if(modTemp != 1){
 			$.each(group, function( index ) { 
 				$(this).width(modWidthValue[(index % modTemp)]);
-			});
+				testmsg += "FI "+index +":"	+modWidthValue[(index % modTemp)]+"\n";
+				});
 		}
+		//alert(testmsg);
 	}
 
 	function getYAxisData(chartData) {
@@ -216,4 +248,6 @@ $(document).ready(function() {
 		// :"+printData(chartData)+"<br /> ColumnGroup
 		// :"+printData(columnGroups));
 	}
+	
+	
 });

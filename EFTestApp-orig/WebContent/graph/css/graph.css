@@ -179,7 +179,8 @@ text-align: center;
 }
 
 .fig0 {
-	background: #a3bb43  0 0 repeat-y;
+	background-color: #a3bb43;
+	width: 10px;
 }
 .fig1 {
 	background: #65c2e8 0 0 repeat-y;
@@ -249,5 +250,35 @@ text-align: center;
 	WIDTH: 920px
 }
 
-
+.pieTip {
+  position: absolute;
+  float: left;
+  min-width: 30px;
+  max-width: 300px;
+  padding: 5px 5px 6px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.97);
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
+  font-size: 12px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+  -webkit-transform: all .3s;
+     -moz-transform: all .3s;
+      -ms-transform: all .3s;
+       -o-transform: all .3s;
+          transform: all .3s;
+  pointer-events: none;
+}
+.pieTip:after {
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      content: "";
+      height: 0;
+      margin: 0 0 0 -6px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      border-top: 6px solid rgba(255,255,255,.95);
+      line-height: 0;
+}
 

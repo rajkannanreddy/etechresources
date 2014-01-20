@@ -4,24 +4,141 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <SCRIPT type=text/javascript src="js/svg.js"></SCRIPT>
-<SCRIPT type=text/javascript src="js/jquery.min.js"></SCRIPT>
+<SCRIPT type=text/javascript src="js/jquery2.js"></SCRIPT>
+<LINK rel=stylesheet type=text/css href="css/test.css">
 <SCRIPT type=text/javascript>
-$(document).ready(function() {
-var data = [10,20,30,20,10];
-var width = 520;
-var height = 520;
-var labels = ['ten','twenty','thirty','twenty','ten'];
-var colors = ['blue','green','red','green','blue'];
+	$(document).ready(function() {
+		var data = [ 10, 20, 30, 20, 10 ];
+		var width = 520;
+		var height = 520;
+		var labels = [ 'ten', 'twenty', 'thirty', 'twenty', 'ten' ];
+		var colors = [ 'blue', 'green', 'red', 'green', 'blue' ];
 
-var circleRadius = Math.min(width-102, height-102) / 2;
-var x = (width-100) / 2;
-var y = (height-100) / 2;
+		var circleRadius = (Math.min(width - 102, height - 102) / 2)-30;
+		var x = (width - 100) / 2;
+		var y = (height - 100) / 2;
 
-document.body.appendChild(pieChart(data, width, height, x, y, circleRadius, colors, labels, 430, 100));
-});
+		 document.body.appendChild(pieChart(data, width, height, x, y,
+				circleRadius, colors, labels, 430, 100)); 
+	});
 </SCRIPT>
 </head>
 
 <body>
+	<!-- <svg width="900" height="500" style="overflow: hidden;">
+		<defs id="defs"></defs>
+		<rect x="0" y="0" width="900" height="500" stroke="none"
+			stroke-width="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="161" y="70.9" font-family="Arial"
+			font-size="14" font-weight="bold" stroke="none" stroke-width="0"
+			fill="#000000">My Daily Activities</text></g>
+		<g>
+		<rect x="542" y="96" width="198" height="106" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<rect x="542" y="96" width="198" height="14" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="561" y="107.9" font-family="Arial"
+			font-size="14" stroke="none" stroke-width="0" fill="#222222">Work</text></g>
+		<rect x="542" y="96" width="14" height="14" stroke="none"
+			stroke-width="0" fill="#3366cc"></rect></g>
+		<g>
+		<rect x="542" y="119" width="198" height="14" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="561" y="130.9" font-family="Arial"
+			font-size="14" stroke="none" stroke-width="0" fill="#222222">Eat</text></g>
+		<rect x="542" y="119" width="14" height="14" stroke="none"
+			stroke-width="0" fill="#dc3912"></rect></g>
+		<g>
+		<rect x="542" y="142" width="198" height="14" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="561" y="153.9" font-family="Arial"
+			font-size="14" stroke="none" stroke-width="0" fill="#222222">Commute</text></g>
+		<rect x="542" y="142" width="14" height="14" stroke="none"
+			stroke-width="0" fill="#ff9900"></rect></g>
+		<g>
+		<rect x="542" y="165" width="198" height="14" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="561" y="176.9" font-family="Arial"
+			font-size="14" stroke="none" stroke-width="0" fill="#222222">Watch TV</text></g>
+		<rect x="542" y="165" width="14" height="14" stroke="none"
+			stroke-width="0" fill="#109618"></rect></g>
+		<g>
+		<rect x="542" y="188" width="198" height="14" stroke="none"
+			stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+		<g>
+		<text text-anchor="start" x="561" y="199.9" font-family="Arial"
+			font-size="14" stroke="none" stroke-width="0" fill="#222222">Sleep</text></g>
+		<rect x="542" y="188" width="14" height="14" stroke="none"
+			stroke-width="0" fill="#990099"></rect></g></g>
+		<g>
+		<path
+			d="M494,235.6L494,266.4A154,123.2,0,0,1,379.8581329457882,385.4020617988132L379.8581329457882,354.6020617988132A154,123.2,0,0,0,494,235.6"
+			stroke="#264d99" stroke-width="1" fill="#264d99">
+			<title>Test Message</title></path>
+		<path
+			d="M340,235.6L340,266.4L379.8581329457882,385.40206179881324L379.8581329457882,354.6020617988132"
+			stroke="#264d99" stroke-width="1" fill="#264d99"></path>
+		<path
+			d="M340,235.6L340,112.39999999999999A154,123.2,0,0,1,379.8581329457882,354.6020617988132L340,235.6A0,0,0,0,0,340,235.6"
+			stroke="#3366cc" stroke-width="1" fill="#3366cc"></path>
+		<text text-anchor="start" x="477.36030915134586"
+			y="226.39461434006182" font-family="Arial" font-size="14"
+			stroke="none" stroke-width="0" fill="#ffffff">45.8%</text></g>
+		<g>
+		<path
+			d="M191.2474227514835,267.48650635663057L191.2474227514835,298.2865063566306A154,123.2,0,0,1,186,266.4L186,235.6A154,123.2,0,0,0,191.2474227514835,267.48650635663057"
+			stroke="#730073" stroke-width="1" fill="#730073"></path>
+		<path
+			d="M340,235.6L340,266.4L191.2474227514835,298.2865063566306L191.2474227514835,267.48650635663057"
+			stroke="#730073" stroke-width="1" fill="#730073"></path>
+		<path
+			d="M340,235.6L191.2474227514835,267.48650635663057A154,123.2,0,0,1,340,112.39999999999999L340,235.6A0,0,0,0,0,340,235.6"
+			stroke="#990099" stroke-width="1" fill="#990099"></path>
+		<text text-anchor="start" x="225.9254422466341" y="184.19496130385247"
+			font-family="Arial" font-size="14" stroke="none" stroke-width="0"
+			fill="#ffffff">29.2%</text></g>
+		<g>
+		<path
+			d="M231.1055556972717,322.7155554421827L231.1055556972717,353.5155554421827A154,123.2,0,0,1,191.2474227514835,298.2865063566306L191.2474227514835,267.48650635663057A154,123.2,0,0,0,231.1055556972717,322.7155554421827"
+			stroke="#0c7112" stroke-width="1" fill="#0c7112"></path>
+		<path
+			d="M340,235.6L340,266.4L231.1055556972717,353.5155554421827L231.1055556972717,322.7155554421827"
+			stroke="#0c7112" stroke-width="1" fill="#0c7112"></path>
+		<path
+			d="M340,235.6L231.1055556972717,322.7155554421827A154,123.2,0,0,1,191.2474227514835,267.48650635663057L340,235.6A0,0,0,0,0,340,235.6"
+			stroke="#109618" stroke-width="1" fill="#109618"></path>
+		<text text-anchor="start" x="218.64261564909316" y="287.9459290885666"
+			font-family="Arial" font-size="14" stroke="none" stroke-width="0"
+			fill="#ffffff">8.3%</text></g>
+		<g>
+		<path
+			d="M300.1418670542118,354.6020617988132L300.1418670542118,385.40206179881324A154,123.2,0,0,1,231.1055556972717,353.51555544218263L231.1055556972717,322.7155554421827A154,123.2,0,0,0,300.1418670542118,354.6020617988132"
+			stroke="#bf7300" stroke-width="1" fill="#bf7300"></path>
+		<path
+			d="M340,235.6L340,266.4L300.1418670542118,385.40206179881324L300.1418670542118,354.6020617988132"
+			stroke="#bf7300" stroke-width="1" fill="#bf7300"></path>
+		<path
+			d="M340,235.6L300.1418670542118,354.6020617988132A154,123.2,0,0,1,231.1055556972717,322.7155554421827L340,235.6A0,0,0,0,0,340,235.6"
+			stroke="#ff9900" stroke-width="1" fill="#ff9900"></path>
+		<text text-anchor="start" x="262.04294164590334" y="324.203962906308"
+			font-family="Arial" font-size="14" stroke="none" stroke-width="0"
+			fill="#ffffff">8.3%</text></g>
+		<g>
+		<path
+			d="M379.8581329457882,354.6020617988132L379.8581329457882,385.40206179881324A154,123.2,0,0,1,300.1418670542118,385.4020617988132L300.1418670542118,354.6020617988132A154,123.2,0,0,0,379.8581329457882,354.6020617988132"
+			stroke="#a52b0e" stroke-width="1" fill="#a52b0e"></path>
+		<path
+			d="M340,235.6L379.8581329457882,354.6020617988132A154,123.2,0,0,1,300.1418670542118,354.6020617988132L340,235.6A0,0,0,0,0,340,235.6"
+			stroke="#dc3912" stroke-width="1" fill="#dc3912"></path>
+		<text text-anchor="start" x="324" y="341.9845131804535"
+			font-family="Arial" font-size="14" stroke="none" stroke-width="0"
+			fill="#ffffff">8.3%</text></g>
+		<g></g></svg> -->
 </body>
 </html>
